@@ -237,16 +237,22 @@ To quickly use CeWL on your machine with Docker, you have to build it :
     docker run -it --rm -v "${PWD}:/host" cewl [OPTIONS] ... <url>
     ```
 
-Optional: create an alias
+Optional: create an alias for the docker command
+
 Linux bash:
-A simple way to enchange workflow is to create an alias in ~/.bash_alias with the above docker command.
+
+A simple way to have a better workflow is to create an alias in ~/.bash_alias with the docker command.
 One example is to create the following alias:
 ```bash
 cewl() {
     docker run --rm -it -v `pwd`:/host nocflame/cewl "$@"
 }
 ```
-then you can run cewl by just typing cewl and have the current folder mounted into the container for easy output.
+then reload your shell: 
+```bash
+source ~/.bashrc
+```
+and you can now run cewl by just typing cewl and have the current folder mounted into the container for easy output.
 
 I am going to stress here, I am not going to be offering any support for this. The work was done by [@loris-intergalactique](https://github.com/loris-intergalactique) who has offered to field any questions on it and give support. I don't use or know Docker, so please, don't ask me for help.
 
